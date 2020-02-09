@@ -36,5 +36,3 @@ From: darachm/singularity_ubuntu:v1.0.0
 %runscript
 
     . /opt/conda/etc/profile.d/conda.sh && conda activate base && bash
-
-
