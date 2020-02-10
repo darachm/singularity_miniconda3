@@ -6,7 +6,8 @@ From: darachm/singularity_ubuntu:v1.0.0
 
 %help
 
-    This is cribbed from continuumIO's miniconda3 image
+    This is cribbed from continuumIO's miniconda3 image at 
+        https://github.com/ContinuumIO/docker-images/blob/master/miniconda3/debian/Dockerfile
 
 %environment
 
@@ -26,11 +27,10 @@ From: darachm/singularity_ubuntu:v1.0.0
     apt-get update --fix-missing 
     apt-get install -qq wget bzip2 ca-certificates libglib2.0-0 libxext6 \
         libsm6 libxrender1 git mercurial subversion 
+
     /bin/bash miniconda.sh -b -p /opt/conda 
     /opt/conda/bin/conda clean -tipsy 
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh
-#    echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc 
-#    echo "conda activate base" >> ~/.bashrc 
     find /opt/conda/ -follow -type f -name '*.a' -delete 
     find /opt/conda/ -follow -type f -name '*.js.map' -delete 
     /opt/conda/bin/conda clean -afy
